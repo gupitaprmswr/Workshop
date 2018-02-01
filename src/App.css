@@ -1,0 +1,18 @@
+body {
+  color: black;
+}
+
+div.jumbotron.jumbotron-fluid{
+  background:url('https://cdn.dribbble.com/users/24444/screenshots/3351201/foodandbev.png');
+  font-family: 'Roboto Slab', serif;
+  color: #bd1b1b;
+}
+
+div.card-view img{
+  height: 300px;
+  object-fit: cover;
+}
+
+div.card-view{
+  height: 450px;
+}
