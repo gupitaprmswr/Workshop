@@ -1,0 +1,34 @@
+body {
+  color: black;
+  background-color: #e7e8e3;
+  font-family: 'Asap', sans-serif;
+}
+
+div.jumbotron.jumbotron-fluid{
+  background-color: #e7e8e3;
+  /* background:url('https://cdn.dribbble.com/users/24444/screenshots/3351201/foodandbev.png'); */
+  font-family: 'Roboto Slab', serif;
+  color: #bd1b1b;
+}
+
+div.card-view img{
+  height: 200px;
+  object-fit: cover;
+}
+
+div.card-view{
+  height: 350px;
+  width: 300px;
+  box-shadow: 10px 10px #aaaaaa;
+}
+
+div.card-body{
+  background-color: #e7e8e3;
+}
+div.card-view p{
+  color: #bd1b1b;
+}
+div.card-header{
+  font-style: italic;
+  font-size: 10px;
+}
