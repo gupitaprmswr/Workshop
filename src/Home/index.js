@@ -18,7 +18,7 @@ export default class Home extends Component {
       },
       headers: {
         "Accept": "application/json",
-        "user-key": "628bf951b5a3b9627009353321fbc3dd"
+        "user-key": "773be931338b9edc7ae1596df4d3db04"
       }
     }).then((dataSet) => {
       console.log(dataSet);
@@ -91,17 +91,7 @@ export default class Home extends Component {
           </div>
         </div>
 
-        <footer className="footer">
-          <div className="card">
-            {/* <div className="card-header">
 
-            </div> */}
-            <div className="card-body">
-              <h5 className="card-title">All rights reserved Hungry© 2018</h5>
-            </div>
-          </div>
-
-        </footer>
 
       </div>
     )

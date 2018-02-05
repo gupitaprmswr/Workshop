@@ -43,22 +43,33 @@ export default class Collections extends Component {
 
     ]
   }
-  componentWillMount(){
-    this.loadData(0);
+  componentDidMount(){
+    // let {match} = this.props;
+    // this.loadData(match.params.place,match.params.lat,match.params.lon);
+  }
+//component DidMount and componentWillReceive mengakibatkan API limit exceeds
+  componentWillReceiveProps(nextProps){
+    console.log("update");
+    let oldData = this.props;
+    let newData = nextProps;
+    if (oldData.match.params.place !== newData.match.params.place){
+      this.loadData(newData.match.params.place,newData.match.params.lat,newData.match.params.lon);
+    }
+
   }
 
-  loadData = (index) => {
+  loadData = (place,lat,lon) => {
     this.setState({
       data: []
     })
     axios.get('https://developers.zomato.com/api/v2.1/geocode',{
       params: {
-        "lat": this.state.place[index].lat,
-        "lon": this.state.place[index].lon
+        "lat": lat,
+        "lon": lon
       },
       headers: {
         "Accept": "application/json",
-        "user-key": "628bf951b5a3b9627009353321fbc3dd"
+        "user-key": "773be931338b9edc7ae1596df4d3db04"
       }
     }).then((dataSet) => {
       console.log(dataSet);
@@ -71,12 +82,18 @@ export default class Collections extends Component {
   }
 
   render(){
+    // console.log(this.props.match.params.place);
+    //
+    // // ^ this is destructuring the variable using {} in the let or const
+    // if (this.state.data.length == 0){
+    //   // this.loadData(match.params.place,match.params.lat,match.params.lon);
+    // }
     return(
       <div className="App">
 
 
         <div className="container my-4">
-          <div className="mb-4">
+          {/* <div className="mb-4">
             {
               this.state.place.map((item,i) =>{
                 return(
@@ -86,7 +103,7 @@ export default class Collections extends Component {
                 );
               })
             }
-          </div>
+          </div> */}
           <div className="row">
 
           {
@@ -98,7 +115,7 @@ export default class Collections extends Component {
                       <img className="card-img-top" src={item.restaurant.featured_image} alt={item.restaurant.name}/>
                       <div className="card-body">
                         <h5 className="card-title">{item.restaurant.name}</h5>
-                      <p className="card-text">{item.restaurant.location.address}</p>
+                      <p className="card-text">{item.restaurant.location.address.substr(0, 50)}</p>
                       </div>
                     </div>
                   </div>
@@ -112,18 +129,7 @@ export default class Collections extends Component {
           </div>
         </div>
 
-        <footer className="footer">
-          <div className="card">
-            {/* <div className="card-header">
 
-            </div> */}
-            <div className="card-body">
-              <h5 className="card-title">All rights reserved Hungry©</h5>
-
-            </div>
-          </div>
-
-        </footer>
 
       </div>
     )

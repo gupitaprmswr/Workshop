@@ -28,7 +28,7 @@ div.card-body{
 div.card-view p{
   color: #bd1b1b;
 }
-div.footer{
+.footer-title{
   font-style: italic;
-  font-size: 5px;
+  font-size: 0.75rem;
 }
