@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-const loadingGif = require('../asset/loading.gif');
+
+const loadingGif = require('../asset/loading1.gif');
+
 
 
 export default class Home extends Component {
@@ -91,12 +93,11 @@ export default class Home extends Component {
 
         <footer className="footer">
           <div className="card">
-            <div className="card-header">
-              Featured
-            </div>
+            {/* <div className="card-header">
+
+            </div> */}
             <div className="card-body">
-              <h5 className="card-title">Special title treatment</h5>
-              <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <h5 className="card-title">All rights reserved Hungry© 2018</h5>
             </div>
           </div>
 

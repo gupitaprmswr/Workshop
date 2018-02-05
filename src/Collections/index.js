@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-const loadingGif = require('../asset/loading.gif');
+
+const loadingGif = require('../asset/loading1.gif');
+
 
 
 export default class Collections extends Component {
@@ -22,7 +24,23 @@ export default class Collections extends Component {
         name: "Bandung",
         lat: "-6.908557",
         lon: "107.609851",
+      },
+      {
+        name: "Jogja",
+        lat: "-7.811497",
+        lon: "110.364545",
+      },
+      {
+        name: "Bali",
+        lat: "-8.509912",
+        lon: "1115.249531",
+      },
+      {
+        name: "Semarang",
+        lat: "-6.986900",
+        lon: "110.412598",
       }
+
     ]
   }
   componentWillMount(){
@@ -96,12 +114,12 @@ export default class Collections extends Component {
 
         <footer className="footer">
           <div className="card">
-            <div className="card-header">
-              Featured
-            </div>
+            {/* <div className="card-header">
+
+            </div> */}
             <div className="card-body">
-              <h5 className="card-title">Special title treatment</h5>
-              <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <h5 className="card-title">All rights reserved Hungry©</h5>
+
             </div>
           </div>
 
